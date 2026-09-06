@@ -239,7 +239,7 @@
 
 .reg-fee-table .reg-active-period {
   background-color: color-mix(in srgb, var(--accent-color), transparent 88%);
-  color: #059669;
+  color: #b45309;
 }
 .reg-fee-table th.reg-active-period {
   background-color: color-mix(in srgb, var(--accent-color), white 25%);

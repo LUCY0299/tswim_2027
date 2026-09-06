@@ -8,28 +8,28 @@
 }
 /* Accent button (rounded orange pill) */
 .btn-accent {
-  background-color: #10b981;
-  border-color: #10b981;
+  background-color: #f4a65f;
+  border-color: #f4a65f;
   color: #fff;
 }
 .btn-accent:hover,
 .btn-accent:focus {
-  background-color: #059669;
-  border-color: #059669;
+  background-color: #ee9a4c;
+  border-color: #ee9a4c;
   color: #fff;
 }
 
 /* Accent outline button (rounded orange pill with outline) */
 .btn-accent-outline {
   background-color: transparent;
-  border: 2px solid #10b981;
-  color: #10b981;
+  border: 2px solid #f4a65f;
+  color: #f4a65f;
 }
 .btn-accent-outline:hover,
 .btn-accent-outline:focus {
-  background-color: rgba(16, 185, 129, 0.08);
-  border-color: #059669;
-  color: #059669;
+  background-color: rgba(244, 166, 95, 0.08);
+  border-color: #ee9a4c;
+  color: #ee9a4c;
 }
 
 /* Soft notice/card style (rounded, subtle orange) */
@@ -43,7 +43,7 @@
   color: #333;
 }
 .note-soft .price {
-  color: #059669;
+  color: #d4822e;
   font-weight: 700;
 }
 
@@ -148,7 +148,7 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #000000; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #0b5394; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #10b981; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #f6b26b; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #f3f6f4; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -156,11 +156,11 @@
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #ffffff;  /* The default color of the main navmenu links */
-  --nav-hover-color: #10b981; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-hover-color: #f6b26b; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #000000; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #10b981; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #f6b26b; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -849,14 +849,14 @@ section,
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
-  padding-top: 80px;
+  padding-top: 52px;
   width: 100%;
-  min-height: 70vh;
+  min-height: 55vh;
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding-bottom: 80px;
+  justify-content: center;
+  padding-bottom: 52px;
 }
 
 .hero img {
@@ -871,7 +871,7 @@ section,
 
 .hero:before {
   content: "";
-  background: linear-gradient(135deg, rgba(7, 55, 99, 0.8), rgba(16, 185, 129, 0.25));
+  background: color-mix(in srgb, var(--background-color), transparent 30%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -973,10 +973,8 @@ section,
   color: var(--heading-color);
   font-weight: 600;
   max-width: 700px;
-  margin: 0 auto 10px;
+  margin: 0 auto;
   text-wrap: balance;
-  padding-bottom: 20px;
-  border-bottom: 3px solid var(--accent-color);
 }
 
 .theme-description {
@@ -989,7 +987,7 @@ section,
 }
 
 .about-tswim-callout {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(11, 83, 148, 0.05));
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
   border-left: 4px solid var(--accent-color);
   padding: 1.25rem 1.5rem;
   border-radius: 8px;
@@ -1005,198 +1003,6 @@ section,
 
 .about-tswim-callout p {
   margin: 0;
-}
-
-/* Bold Title Layout for Theme & TSWIM */
-#general-info {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 900px;
-}
-
-#general-info::before {
-  content: "2027 Workshop Theme";
-  display: block;
-  font-size: 12px;
-  color: var(--accent-color);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-}
-
-#general-info .theme-description {
-  max-width: none;
-  margin: 0 0 30px 0;
-  padding: 0;
-  background: transparent;
-  border: none;
-  text-align: justify;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: color-mix(in srgb, var(--default-color), transparent 10%);
-}
-
-#general-info .about-tswim-callout {
-  margin-top: 0;
-  max-width: none;
-  margin-left: 0;
-  margin-right: 0;
-  padding: 25px;
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(7, 55, 99, 0.08));
-  border-left: 4px solid var(--accent-color);
-  border-radius: 8px;
-  text-align: justify;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  transition: all 0.3s ease;
-  position: relative;
-  padding-top: 45px;
-}
-
-#general-info .about-tswim-callout:hover {
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-}
-
-#general-info .about-tswim-callout::before {
-  content: "About TSWIM";
-  position: absolute;
-  top: 12px;
-  left: 25px;
-  font-size: 12px;
-  color: var(--accent-color);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-}
-
-@media (max-width: 768px) {
-  #general-info {
-    max-width: 100%;
-  }
-
-  #general-info .about-tswim-callout {
-    padding: 20px;
-    padding-top: 40px;
-  }
-
-  #general-info .about-tswim-callout::before {
-    left: 20px;
-  }
-}
-
-/* Elegant Timeline with Dynamic Flow Line */
-.elegant-timeline-container {
-  position: relative;
-  padding: 40px 0 80px 0;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.timeline-background {
-  position: absolute;
-  top: 39px;
-  left: 8%;
-  right: 8%;
-  height: 3px;
-  background: linear-gradient(90deg, rgba(16, 185, 129, 0.4), rgba(16, 185, 129, 0.5));
-  z-index: 1;
-  border-radius: 2px;
-}
-
-.timeline-progress {
-  position: absolute;
-  top: 39px;
-  left: 8%;
-  height: 3px;
-  background: linear-gradient(90deg,
-    rgba(5, 150, 105, 0) 0%,
-    rgba(5, 150, 105, 0.4) 20%,
-    rgba(5, 150, 105, 1) 50%,
-    rgba(5, 150, 105, 0.4) 80%,
-    rgba(5, 150, 105, 0) 100%);
-  z-index: 2;
-  width: 0%;
-  transition: width 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
-  pointer-events: none;
-  filter: drop-shadow(0 0 8px rgba(5, 150, 105, 0.8));
-  border-radius: 2px;
-}
-
-.timeline-items-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  position: relative;
-  z-index: 3;
-}
-
-.timeline-item-elegant {
-  flex: 1;
-  text-align: center;
-  position: relative;
-  cursor: pointer;
-  transition: all 0.4s ease;
-}
-
-.timeline-dot {
-  width: 12px;
-  height: 12px;
-  background: white;
-  border: 2px solid #10b981;
-  border-radius: 50%;
-  margin: 0 auto 25px;
-  position: relative;
-  z-index: 4;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.timeline-item-elegant:hover .timeline-dot {
-  width: 20px;
-  height: 20px;
-  background: #10b981;
-  box-shadow: 0 0 16px rgba(16, 185, 129, 0.6);
-}
-
-#important-dates .timeline-item-elegant .timeline-content h5 {
-  color: #10b981 !important;
-  transition: color 0.4s ease;
-}
-
-#important-dates .timeline-item-elegant .timeline-content p {
-  color: #666 !important;
-  transition: color 0.4s ease;
-}
-
-#important-dates .timeline-item-elegant:hover .timeline-content h5 {
-  color: #059669 !important;
-  font-weight: 700 !important;
-}
-
-#important-dates .timeline-item-elegant:hover .timeline-content p {
-  color: #333 !important;
-  font-weight: 600 !important;
-}
-
-@media (max-width: 768px) {
-  .elegant-timeline-container {
-    padding: 40px 0 60px 0;
-  }
-
-  .timeline-items-wrapper {
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-
-  .timeline-item-elegant {
-    flex: 0 0 calc(50% - 6px);
-  }
-
-  .timeline-background,
-  .timeline-progress {
-    display: none;
-  }
 }
 
 .read-more-toggle {
@@ -1764,7 +1570,7 @@ section,
   display: flex;
   gap: 20px;
   padding: 25px;
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(11, 83, 148, 0.05));
+  background-color: var(--surface-color);
   border-radius: 15px;
   border-left: 4px solid var(--accent-color);
   margin-top: 20px;
