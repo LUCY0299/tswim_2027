@@ -33,3 +33,6 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# Old version - do not commit
+tswim2026/
