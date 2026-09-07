@@ -8,28 +8,28 @@
 }
 /* Accent button (rounded orange pill) */
 .btn-accent {
-  background-color: #f4a65f;
-  border-color: #f4a65f;
+  background-color: #10b981;
+  border-color: #10b981;
   color: #fff;
 }
 .btn-accent:hover,
 .btn-accent:focus {
-  background-color: #ee9a4c;
-  border-color: #ee9a4c;
+  background-color: #10b981;
+  border-color: #10b981;
   color: #fff;
 }
 
 /* Accent outline button (rounded orange pill with outline) */
 .btn-accent-outline {
   background-color: transparent;
-  border: 2px solid #f4a65f;
-  color: #f4a65f;
+  border: 2px solid #10b981;
+  color: #10b981;
 }
 .btn-accent-outline:hover,
 .btn-accent-outline:focus {
-  background-color: rgba(244, 166, 95, 0.08);
-  border-color: #ee9a4c;
-  color: #ee9a4c;
+  background-color: rgba(16, 185, 129, 0.08);
+  border-color: #10b981;
+  color: #10b981;
 }
 
 /* Soft notice/card style (rounded, subtle orange) */
@@ -43,7 +43,7 @@
   color: #333;
 }
 .note-soft .price {
-  color: #d4822e;
+  color: #059669;
   font-weight: 700;
 }
 
@@ -144,11 +144,11 @@
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
+:root {
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #000000; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #0b5394; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #f6b26b; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #10b981; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #f3f6f4; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -156,11 +156,11 @@
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #ffffff;  /* The default color of the main navmenu links */
-  --nav-hover-color: #f6b26b; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-hover-color: #10b981; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #000000; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #f6b26b; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #10b981; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -871,7 +871,7 @@ section,
 
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  background: linear-gradient(90deg, rgba(7, 55, 99, 0.8) 0%, rgba(16, 185, 129, 0.7) 100%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -3742,11 +3742,11 @@ section,
 
 /* Parking Information Styling */
 .parking-info {
-  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
   border-radius: 10px;
   padding: 1.5rem;
   margin-top: 1.5rem;
-  border-left: 4px solid #f39c12;
+  border-left: 4px solid #10b981;
 }
 
 .parking-info h4 {
@@ -3912,5 +3912,159 @@ section,
   
   .timeline:before {
     left: 0.5rem;
+  }
+}
+
+/* ============================================================
+   Important Dates - Elegant Timeline Animation
+   ============================================================ */
+
+.elegant-timeline-container {
+  position: relative;
+  padding: 40px 0 80px 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 背景靜態線 */
+.timeline-background {
+  position: absolute;
+  top: 39px;
+  left: 8%;
+  right: 8%;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.4), rgba(16, 185, 129, 0.5));
+  z-index: 1;
+  border-radius: 2px;
+}
+
+/* 動態流線 */
+.timeline-progress {
+  position: absolute;
+  top: 39px;
+  left: 8%;
+  height: 3px;
+  background: linear-gradient(90deg,
+    rgba(5, 150, 105, 0) 0%,
+    rgba(5, 150, 105, 0.4) 20%,
+    rgba(5, 150, 105, 1) 50%,
+    rgba(5, 150, 105, 0.4) 80%,
+    rgba(5, 150, 105, 0) 100%);
+  z-index: 2;
+  width: 0%;
+  transition: width 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px rgba(5, 150, 105, 0.8));
+  border-radius: 2px;
+}
+
+/* 時間軸項目容器 */
+.timeline-items {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+  z-index: 3;
+}
+
+/* 時間軸項目 */
+.timeline-item-elegant {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+/* 時間軸圓點 */
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  background: white;
+  border: 2px solid #10b981;
+  border-radius: 50%;
+  margin: 0 auto 25px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.timeline-item-elegant:hover .timeline-dot {
+  width: 20px;
+  height: 20px;
+  background: #10b981;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.6);
+}
+
+/* 文字顏色動畫 */
+#important-dates .timeline-item-elegant .timeline-content h5 {
+  color: #10b981 !important;
+  transition: color 0.4s ease;
+}
+
+#important-dates .timeline-item-elegant .timeline-content p {
+  color: #666 !important;
+  transition: color 0.4s ease;
+}
+
+#important-dates .timeline-item-elegant:hover .timeline-content h5 {
+  color: #059669 !important;
+}
+
+#important-dates .timeline-item-elegant:hover .timeline-content p {
+  color: #10b981 !important;
+}
+
+/* 下劃線動畫 */
+.timeline-content::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #10b981;
+  transition: width 0.4s ease;
+}
+
+.timeline-item-elegant:hover .timeline-content::after {
+  width: 100%;
+}
+
+/* 行動裝置適配 */
+@media (max-width: 768px) {
+  .elegant-timeline-container {
+    padding: 20px 0 40px 0;
+  }
+
+  .timeline-background,
+  .timeline-progress {
+    left: 16px;
+    right: auto;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    height: auto;
+  }
+
+  .timeline-items {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .timeline-item-elegant {
+    text-align: left;
+    padding-left: 50px;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+  }
+
+  .timeline-content::after {
+    display: none;
   }
 }
