@@ -1,35 +1,41 @@
-<svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
-  <!-- Main Circle/Badge -->
-  <circle cx="45" cy="50" r="38" fill="none" stroke="white" stroke-width="2"/>
+<svg viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-opacity="0.3"/>
+    </filter>
+  </defs>
 
-  <!-- Decorative dots pattern -->
-  <circle cx="30" cy="32" r="2" fill="white"/>
-  <circle cx="60" cy="28" r="2" fill="white"/>
-  <circle cx="62" cy="50" r="2" fill="white"/>
-  <circle cx="60" cy="68" r="2" fill="white"/>
-  <circle cx="30" cy="68" r="2" fill="white"/>
-  <circle cx="28" cy="50" r="2" fill="white"/>
+  <!-- Main Circle Badge with shadow -->
+  <g filter="url(#shadow)">
+    <circle cx="45" cy="50" r="38" fill="none" stroke="white" stroke-width="2.5"/>
 
-  <!-- Main Text: TSWIM -->
-  <text x="45" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">
+    <!-- Inner decorative circle -->
+    <circle cx="45" cy="50" r="33" fill="none" stroke="white" stroke-width="1" opacity="0.6"/>
+  </g>
+
+  <!-- TSWIM text -->
+  <text x="45" y="52" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle" filter="url(#shadow)">
     TSWIM
   </text>
 
-  <!-- Year: 2027 -->
-  <text x="45" y="67" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="white" text-anchor="middle">
+  <!-- 2027 year -->
+  <text x="45" y="68" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" fill="white" text-anchor="middle" filter="url(#shadow)">
     2027
   </text>
 
-  <!-- Text on Right -->
-  <text x="95" y="38" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">
+  <!-- Right side text -->
+  <text x="105" y="38" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="white" filter="url(#shadow)">
     TSWIM 2027
   </text>
 
-  <text x="95" y="54" font-family="Arial, sans-serif" font-size="8" fill="white" letter-spacing="0.3">
+  <text x="105" y="54" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="500" fill="white" filter="url(#shadow)">
     Taiwan Summer Workshop
   </text>
 
-  <text x="95" y="63" font-family="Arial, sans-serif" font-size="8" fill="white" letter-spacing="0.3">
+  <text x="105" y="65" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="500" fill="white" filter="url(#shadow)">
     on Information Management
   </text>
+
+  <!-- Decorative line -->
+  <line x1="88" y1="25" x2="88" y2="75" stroke="white" stroke-width="1.5" opacity="0.4" filter="url(#shadow)"/>
 </svg>
