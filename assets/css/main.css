@@ -283,15 +283,15 @@ h6 {
 
 .header .logo {
   line-height: 1;
-}
-
-.header .logo img {
-  max-height: 36px;
-  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .header .logo img.navbar-logo {
   max-height: 80px;
+  width: auto;
+  max-width: 250px;
   transition: max-height 0.3s ease;
 }
 
