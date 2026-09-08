@@ -285,18 +285,79 @@ h6 {
   line-height: 1;
   display: flex;
   align-items: center;
+  gap: 12px;
+  transition: gap 0.3s ease;
+}
+
+.header .logo .logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.header .logo .logo-main {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  color: white;
+}
+
+.header .logo .logo-year {
+  font-size: 10px;
+  font-weight: 600;
+  color: white;
+  opacity: 0.9;
+}
+
+.header .logo .logo-subtitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.header .logo .logo-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+  line-height: 1.2;
+}
+
+.header .logo .logo-desc {
+  font-size: 8px;
+  font-weight: 500;
+  color: white;
+  opacity: 0.85;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.scrolled .header .logo .logo-text {
+  min-width: 40px;
+}
+
+.scrolled .header .logo .logo-main {
+  font-size: 14px;
+}
+
+.scrolled .header .logo .logo-year {
+  font-size: 8px;
+}
+
+.scrolled .header .logo .logo-title {
+  font-size: 11px;
+}
+
+.scrolled .header .logo .logo-desc {
+  font-size: 7px;
+}
+
+.scrolled .header .logo {
   gap: 8px;
-}
-
-.header .logo img.navbar-logo {
-  max-height: 80px;
-  width: auto;
-  max-width: 250px;
-  transition: max-height 0.3s ease;
-}
-
-.scrolled .header .logo img.navbar-logo {
-  max-height: 40px;
 }
 
 .header .logo h1 {
