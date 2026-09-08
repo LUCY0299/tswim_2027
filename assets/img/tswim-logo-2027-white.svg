@@ -1,46 +1,35 @@
-<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
   <!-- Main Circle/Badge -->
-  <circle cx="80" cy="80" r="75" fill="none" stroke="white" stroke-width="2"/>
+  <circle cx="45" cy="50" r="38" fill="none" stroke="white" stroke-width="2"/>
 
-  <!-- Decorative dots -->
-  <circle cx="60" cy="50" r="3" fill="white"/>
-  <circle cx="100" cy="45" r="3" fill="white"/>
-  <circle cx="110" cy="75" r="3" fill="white"/>
-  <circle cx="100" cy="110" r="3" fill="white"/>
-  <circle cx="60" cy="115" r="3" fill="white"/>
-  <circle cx="50" cy="75" r="3" fill="white"/>
+  <!-- Decorative dots pattern -->
+  <circle cx="30" cy="32" r="2" fill="white"/>
+  <circle cx="60" cy="28" r="2" fill="white"/>
+  <circle cx="62" cy="50" r="2" fill="white"/>
+  <circle cx="60" cy="68" r="2" fill="white"/>
+  <circle cx="30" cy="68" r="2" fill="white"/>
+  <circle cx="28" cy="50" r="2" fill="white"/>
 
   <!-- Main Text: TSWIM -->
-  <text x="80" y="75" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">
+  <text x="45" y="52" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">
     TSWIM
   </text>
 
   <!-- Year: 2027 -->
-  <text x="80" y="100" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="white" text-anchor="middle">
+  <text x="45" y="67" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="white" text-anchor="middle">
     2027
   </text>
 
-  <!-- Vertical Separator Line -->
-  <line x1="160" y1="30" x2="160" y2="130" stroke="white" stroke-width="1" opacity="0.5"/>
-
-  <!-- Full Text on Right -->
-  <text x="180" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+  <!-- Text on Right -->
+  <text x="95" y="38" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">
     TSWIM 2027
   </text>
 
-  <text x="180" y="70" font-family="Arial, sans-serif" font-size="11" fill="white" letter-spacing="0.5">
-    Taiwan Summer Workshop on
+  <text x="95" y="54" font-family="Arial, sans-serif" font-size="8" fill="white" letter-spacing="0.3">
+    Taiwan Summer Workshop
   </text>
 
-  <text x="180" y="85" font-family="Arial, sans-serif" font-size="11" fill="white" letter-spacing="0.5">
-    Information Management
-  </text>
-
-  <!-- Decorative bottom line -->
-  <line x1="160" y1="95" x2="390" y2="95" stroke="white" stroke-width="1" opacity="0.3"/>
-
-  <!-- Location and Date -->
-  <text x="180" y="115" font-family="Arial, sans-serif" font-size="10" fill="white" opacity="0.8">
-    National Central University • Jun 29 - July 01, 2027
+  <text x="95" y="63" font-family="Arial, sans-serif" font-size="8" fill="white" letter-spacing="0.3">
+    on Information Management
   </text>
 </svg>
