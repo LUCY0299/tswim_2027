@@ -289,42 +289,31 @@ h6 {
   transition: gap 0.3s ease;
 }
 
+.header .logo .logo-badge {
+  height: 80px;
+  width: 80px;
+  flex-shrink: 0;
+  transition: height 0.3s ease, width 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.scrolled .header .logo .logo-badge {
+  height: 50px;
+  width: 50px;
+}
+
 .header .logo .logo-text {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-width: 60px;
-  font-weight: bold;
   transition: all 0.3s ease;
 }
 
 .header .logo .logo-main {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
-  line-height: 1;
-  color: white;
-}
-
-.header .logo .logo-year {
-  font-size: 10px;
-  font-weight: 600;
-  color: white;
-  opacity: 0.9;
-}
-
-.header .logo .logo-subtitle {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.header .logo .logo-title {
-  font-size: 13px;
-  font-weight: bold;
-  color: white;
   line-height: 1.2;
+  color: white;
 }
 
 .header .logo .logo-desc {
@@ -332,24 +321,12 @@ h6 {
   font-weight: 500;
   color: white;
   opacity: 0.85;
-  line-height: 1.2;
+  line-height: 1.3;
   white-space: nowrap;
 }
 
-.scrolled .header .logo .logo-text {
-  min-width: 40px;
-}
-
 .scrolled .header .logo .logo-main {
-  font-size: 14px;
-}
-
-.scrolled .header .logo .logo-year {
-  font-size: 8px;
-}
-
-.scrolled .header .logo .logo-title {
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .scrolled .header .logo .logo-desc {
