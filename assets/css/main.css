@@ -307,14 +307,14 @@ h6 {
 }
 
 .header .logo .logo-main {
-  font-size: 14px;
+  font-size: 26px;
   font-weight: 700;
   line-height: 1.2;
   color: white;
 }
 
 .header .logo .logo-desc {
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 500;
   color: white;
   opacity: 0.85;
@@ -323,11 +323,11 @@ h6 {
 }
 
 .scrolled .header .logo .logo-main {
-  font-size: 12px;
+  font-size: 18px;
 }
 
 .scrolled .header .logo .logo-desc {
-  font-size: 7px;
+  font-size: 9px;
 }
 
 .scrolled .header .logo {
