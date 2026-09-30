@@ -1092,15 +1092,77 @@ section,
   margin: 0;
 }
 
-.cfp-summary::after {
-  content: "▶ Show paper and session format details";
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--accent-color);
+.cfp-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--accent-color), black 20%);
+  transition: font-size 0.2s ease;
 }
 
-.cfp-collapse[open] .cfp-summary::after {
-  content: "▼ Hide paper and session format details";
+.cfp-summary:hover .cfp-hint {
+  font-size: 1.1rem;
+}
+
+.cfp-badge {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  transition: background 0.2s ease, transform 0.3s ease;
+  animation: cfp-hint-bounce 2s ease-in-out infinite;
+}
+
+.cfp-chev {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid var(--accent-color);
+  transition: border-top-color 0.2s ease;
+}
+
+.cfp-summary:hover .cfp-badge {
+  background: var(--accent-color);
+}
+
+.cfp-summary:hover .cfp-chev {
+  border-top-color: #fff;
+}
+
+@keyframes cfp-hint-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cfp-badge {
+    animation: none;
+  }
+}
+
+.cfp-hint-open {
+  display: none;
+}
+
+.cfp-collapse[open] .cfp-hint-open {
+  display: inline;
+}
+
+.cfp-collapse[open] .cfp-hint-closed {
+  display: none;
+}
+
+.cfp-collapse[open] .cfp-badge {
+  transform: rotate(180deg);
+  animation: none;
 }
 
 /* Submission status banner lives in the summary so it's always visible,
