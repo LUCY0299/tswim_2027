@@ -1104,7 +1104,7 @@ section,
 }
 
 .cfp-summary:hover .cfp-hint {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .cfp-badge {
@@ -1139,7 +1139,7 @@ section,
 
 @keyframes cfp-hint-bounce {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(4px); }
+  50% { transform: translateY(2px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1171,6 +1171,40 @@ section,
   align-self: stretch;
   margin-top: 0.75rem;
   cursor: default;
+}
+
+/* Submit Paper button: always larger than the "Show paper & session" hint
+   (hint: 0.95rem, 1rem on hover), including in its hover state */
+.btn-accent.cfp-submit-btn {
+  font-size: 1.25rem;
+  padding: 0.6rem 1.75rem;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.25);
+  transition: font-size 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-accent.cfp-submit-btn:hover,
+.btn-accent.cfp-submit-btn:focus-visible {
+  font-size: 1.3rem;
+  background-color: #0e9f6e;
+  border-color: #0e9f6e;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(16, 185, 129, 0.3);
+}
+
+.btn-accent.cfp-submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-accent.cfp-submit-btn {
+    transition: none;
+  }
+  .btn-accent.cfp-submit-btn:hover,
+  .btn-accent.cfp-submit-btn:focus-visible {
+    transform: none;
+  }
 }
 
 /* Call for Papers - Paper Types */
