@@ -1,0 +1,144 @@
+/*--------------------------------------------------------------
+# Color Theme Previews
+# Activated by <html data-theme="a|b|c"> (set from the ?theme= URL parameter).
+# Without data-theme, the default colors in main.css apply.
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Theme A - NCU Purple & Gold
+--------------------------------------------------------------*/
+:root[data-theme="a"] {
+  --heading-color: #56008d;
+  --accent-color: #56008d;
+  --accent-rgb: 86, 0, 141;
+  --accent-hover-color: #3f0068;
+  --accent-strong-color: #3f0068;
+  --surface-color: #f7f2fb;
+  --dark-section-bg: #3a005e;
+  --dark-section-surface: #56008d;
+  --header-scrolled-bg: #2e004b;
+  --hero-overlay: linear-gradient(180deg, rgba(58, 0, 94, 0.55) 0%, rgba(86, 0, 141, 0.18) 45%, rgba(86, 0, 141, 0.18) 70%, rgba(58, 0, 94, 0.35) 100%);
+  --soft-tint-start: #f3e8fb;
+  --soft-tint-end: #e6d3f5;
+  --nav-hover-color: #ffec5c;
+  --nav-dropdown-hover-color: #56008d;
+  --gold-color: #ffec5c; /* Gold for dark backgrounds only (fails contrast on white) */
+  --gold-line-color: #f2d43a; /* Slightly deeper gold for decorative lines on light backgrounds */
+  --gold-hover-color: #ffe22e;
+  --accent-dark-rgb: 242, 212, 58; /* Gold timeline flow */
+  --table-header-bg: #3a005e;
+  --table-day-bg: #e6d3f5;
+  --table-title-color: #56008d;
+  --table-highlight-bg: #f3e8fb;
+}
+
+:root[data-theme="a"] .light-background {
+  --background-color: #f6f1fa;
+  --surface-color: #ffffff;
+}
+
+/* Gold highlights inside dark sections (hero, footer) */
+:root[data-theme="a"] .dark-background {
+  --accent-color: var(--gold-color);
+}
+
+/* Gold underline under section titles */
+:root[data-theme="a"] .tos-header h2:not(.theme-title)::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin: 12px auto 0;
+  border-radius: 2px;
+  background: var(--gold-line-color);
+}
+
+/* Header: gold line once scrolled */
+:root[data-theme="a"] .scrolled .header {
+  box-shadow: inset 0 -3px 0 var(--gold-color), 0 0 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Nav: gold underline under the active/hovered item */
+:root[data-theme="a"] .navmenu>ul>li>a:before {
+  background-color: var(--nav-hover-color);
+}
+
+/* Hero: soft shadow keeps white text readable on the lighter overlay */
+:root[data-theme="a"] .hero h2,
+:root[data-theme="a"] .hero p,
+:root[data-theme="a"] .hero .container div {
+  text-shadow: 0 2px 12px rgba(30, 0, 50, 0.55);
+}
+
+/* Hero: gold dates */
+:root[data-theme="a"] .hero .hero-date {
+  color: var(--gold-color);
+  font-weight: 600;
+}
+
+/* Gold buttons with purple text */
+:root[data-theme="a"] .btn-accent:not(.disabled),
+:root[data-theme="a"] .information .tos-contact .contact-box .contact-content .contact-link {
+  background-color: var(--gold-color);
+  border-color: var(--gold-line-color);
+  color: #3a005e;
+}
+
+:root[data-theme="a"] .btn-accent:not(.disabled):hover,
+:root[data-theme="a"] .btn-accent:not(.disabled):focus,
+:root[data-theme="a"] .btn-accent.cfp-submit-btn:hover,
+:root[data-theme="a"] .btn-accent.cfp-submit-btn:focus-visible,
+:root[data-theme="a"] .information .tos-contact .contact-box .contact-content .contact-link:hover {
+  background-color: var(--gold-hover-color);
+  border-color: var(--gold-line-color);
+  color: #3a005e;
+}
+
+/* Purple tiles with gold icons */
+:root[data-theme="a"] .information .tos-contact .contact-box .contact-icon i,
+:root[data-theme="a"] .scroll-top i {
+  color: var(--gold-color);
+}
+
+/* Call for Papers card and parking box: gold edge */
+:root[data-theme="a"] .submission-banner {
+  border-top: 4px solid var(--gold-line-color);
+}
+
+:root[data-theme="a"] .parking-info {
+  border-left-color: var(--gold-line-color);
+}
+
+/* Important Dates timeline: purple-to-gold line, gold dot on hover */
+:root[data-theme="a"] .timeline-background {
+  background: linear-gradient(90deg, rgba(86, 0, 141, 0.45), rgba(242, 212, 58, 0.9));
+}
+
+:root[data-theme="a"] .timeline-item-elegant:hover .timeline-dot {
+  background: var(--gold-color);
+  box-shadow: 0 0 16px rgba(242, 212, 58, 0.8);
+}
+
+/* Program & registration tables: gold column-header text, gold active period */
+:root[data-theme="a"] .program-schedule .col-header td,
+:root[data-theme="a"] .program-schedule .col-header th {
+  color: var(--gold-color);
+}
+
+:root[data-theme="a"] .reg-fee-table th.reg-active-period {
+  background-color: var(--gold-color);
+  color: #3a005e;
+}
+
+:root[data-theme="a"] .reg-fee-table .reg-active-period {
+  background-color: #fff8d1;
+}
+
+/* Footer: gold site name and top edge */
+:root[data-theme="a"] .footer {
+  border-top: 4px solid var(--gold-color);
+}
+
+:root[data-theme="a"] .footer .sitename {
+  color: var(--gold-color);
+}

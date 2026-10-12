@@ -44,8 +44,8 @@
 
 /* Day header */
 .program-schedule .day-header td {
-  background-color: #B4C6E7;
-  color: #1F4E79;
+  background-color: var(--table-day-bg, #B4C6E7);
+  color: var(--table-title-color, #1F4E79);
   font-weight: bold;
   font-size: 14pt;
 }
@@ -53,7 +53,7 @@
 /* Column header */
 .program-schedule .col-header td,
 .program-schedule .col-header th {
-  background-color: #4472C4;
+  background-color: var(--table-header-bg, #4472C4);
   color: #fff;
   font-weight: bold;
 }
@@ -68,7 +68,7 @@
 .program-schedule .paper-row td { vertical-align: top; }
 .program-schedule .detail-cell { text-align: left; padding: 8px 10px; }
 .program-schedule .sess-title  { font-weight: bold; text-align: center; margin-bottom: 2px; }
-.program-schedule .sess-theme  { font-size: 0.82rem; font-weight: 500; text-align: center; line-height: 1.3; color: #1F4E79; margin: 0 0 7px; }
+.program-schedule .sess-theme  { font-size: 0.82rem; font-weight: 500; text-align: center; line-height: 1.3; color: var(--table-title-color, #1F4E79); margin: 0 0 7px; }
 /* Paper-session theme line + its show/hide-titles toggle: desktop shows full
    titles, so both are hidden here and only surface in the mobile media query. */
 .program-schedule .sess-theme--collapse,
@@ -111,7 +111,7 @@
 .program-schedule .ceremony { text-align: center; }
 
 /* NSTC Workshop events — highlighted in soft blue (placed last so it overrides .break/.ceremony) */
-.program-schedule .nstc-workshop { background-color: #DDEBF7; }
+.program-schedule .nstc-workshop { background-color: var(--table-highlight-bg, #DDEBF7); }
 
 /* Regular centered */
 .program-schedule .time-cell { text-align: center; white-space: nowrap; }
@@ -212,7 +212,7 @@
     border: 0;
     font-family: inherit;
     font-size: 0.74rem;
-    color: #1F4E79;
+    color: var(--table-title-color, #1F4E79);
     text-decoration: underline;
     cursor: pointer;
   }

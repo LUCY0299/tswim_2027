@@ -28,10 +28,19 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css?v=1.0.52" rel="stylesheet">
+  <link href="assets/css/main.css?v=1.0.53" rel="stylesheet">
 
   <!-- Schedule CSS (scoped under .program-schedule) -->
-  <link href="assets/css/schedule.css?v=1.0.29" rel="stylesheet">
+  <link href="assets/css/schedule.css?v=1.0.30" rel="stylesheet">
+
+  <!-- Color theme previews (?theme=a|b|c) -->
+  <link href="assets/css/themes.css?v=1.0.2" rel="stylesheet">
+  <script>
+    (function () {
+      var theme = new URLSearchParams(location.search).get('theme');
+      if (/^[abc]$/.test(theme)) document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
 
 </head>
 
@@ -99,7 +108,7 @@
               National Central University
             </p>
             <div>Taoyuan, Taiwan</div>
-            <div>Jun 29 - July 01, 2027</div>
+            <div class="hero-date">Jun 29 - July 01, 2027</div>
             <p></p>
 
           </div>
