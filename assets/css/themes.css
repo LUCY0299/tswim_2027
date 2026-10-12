@@ -285,7 +285,7 @@
   position: fixed;
   left: 16px;
   bottom: 16px;
-  z-index: 100000;
+  z-index: 996; /* above page content, below the header (997, which holds the mobile menu) and modals */
   display: flex;
   align-items: center;
   gap: 4px;
