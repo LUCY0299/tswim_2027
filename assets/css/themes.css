@@ -244,3 +244,92 @@
 :root[data-theme] .footer .sitename {
   color: var(--hl-color);
 }
+
+/*--------------------------------------------------------------
+# Theme Preview Switcher (assets/js/theme-switcher.js)
+# Neutral styling so it looks the same under every theme.
+--------------------------------------------------------------*/
+.theme-switcher {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px;
+  background: #ffffff;
+  border: 1px solid #e2e4e8;
+  border-radius: 999px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+  font-family: var(--default-font);
+  white-space: nowrap;
+}
+
+.theme-switcher-title {
+  padding: 0 8px 0 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+}
+
+.theme-switcher-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.theme-switcher-btn:hover {
+  background: #f2f3f5;
+}
+
+.theme-switcher-btn[aria-pressed="true"] {
+  border-color: var(--swatch-main);
+  background: #ffffff;
+  font-weight: 700;
+}
+
+.theme-switcher-btn:focus-visible {
+  outline: 2px solid #333;
+  outline-offset: 2px;
+}
+
+/* Two-tone dot: theme main color + accent color */
+.theme-switcher-swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--swatch-main) 50%, var(--swatch-accent) 50%);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.theme-switcher-id {
+  font-weight: 700;
+}
+
+/* Phones & small tablets: hide the title and long labels, keep swatch + letter */
+@media (max-width: 768px) {
+  .theme-switcher {
+    bottom: 12px;
+  }
+
+  .theme-switcher-title,
+  .theme-switcher-label {
+    display: none;
+  }
+
+  .theme-switcher-btn {
+    padding: 6px 10px;
+  }
+}
