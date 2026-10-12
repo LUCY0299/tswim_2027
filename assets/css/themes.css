@@ -2,6 +2,13 @@
 # Color Theme Previews
 # Activated by <html data-theme="a|b|c"> (set from the ?theme= URL parameter).
 # Without data-theme, the default colors in main.css apply.
+#
+# Each theme sets the base color variables plus a highlight set (--hl-*):
+#   --hl-color         highlight on dark backgrounds (nav, hero date, footer)
+#   --hl-line-color    highlight lines on light backgrounds
+#   --hl-rgb           highlight as an RGB triplet, for glows
+#   --hl-btn-*         primary button colors
+#   --hl-cell-bg       active registration period cells
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -13,132 +20,190 @@
   --accent-rgb: 86, 0, 141;
   --accent-hover-color: #3f0068;
   --accent-strong-color: #3f0068;
+  --accent-dark-rgb: 242, 212, 58; /* Gold timeline flow */
   --surface-color: #f7f2fb;
   --dark-section-bg: #3a005e;
   --dark-section-surface: #56008d;
   --header-scrolled-bg: #2e004b;
   --hero-overlay: linear-gradient(180deg, rgba(58, 0, 94, 0.55) 0%, rgba(86, 0, 141, 0.18) 45%, rgba(86, 0, 141, 0.18) 70%, rgba(58, 0, 94, 0.35) 100%);
+  --hero-text-shadow: rgba(30, 0, 50, 0.55);
   --soft-tint-start: #f3e8fb;
   --soft-tint-end: #e6d3f5;
   --nav-hover-color: #ffec5c;
   --nav-dropdown-hover-color: #56008d;
-  --gold-color: #ffec5c; /* Gold for dark backgrounds only (fails contrast on white) */
-  --gold-line-color: #f2d43a; /* Slightly deeper gold for decorative lines on light backgrounds */
-  --gold-hover-color: #ffe22e;
-  --accent-dark-rgb: 242, 212, 58; /* Gold timeline flow */
   --table-header-bg: #3a005e;
   --table-day-bg: #e6d3f5;
   --table-title-color: #56008d;
   --table-highlight-bg: #f3e8fb;
+  --light-section-bg: #f6f1fa;
+
+  /* Gold: on dark backgrounds only (fails contrast on white) */
+  --hl-color: #ffec5c;
+  --hl-line-color: #f2d43a;
+  --hl-rgb: 242, 212, 58;
+  --hl-btn-bg: #ffec5c;
+  --hl-btn-hover-bg: #ffe22e;
+  --hl-btn-border: #f2d43a;
+  --hl-btn-text: #3a005e;
+  --hl-cell-bg: #fff8d1;
 }
 
-:root[data-theme="a"] .light-background {
-  --background-color: #f6f1fa;
+/*--------------------------------------------------------------
+# Theme B - IM Department Flag Navy
+--------------------------------------------------------------*/
+:root[data-theme="b"] {
+  --default-color: #000000;
+  --heading-color: #17348a;
+  --accent-color: #1e6fd9;
+  --accent-rgb: 30, 111, 217;
+  --accent-hover-color: #17348a;
+  --accent-strong-color: #17348a;
+  --accent-dark-rgb: 30, 111, 217;
+  --surface-color: #eef2fa;
+  --dark-section-bg: #0f2360;
+  --dark-section-surface: #17348a;
+  --header-scrolled-bg: #0c1c4d;
+  --hero-overlay: linear-gradient(180deg, rgba(15, 35, 96, 0.75) 0%, rgba(23, 52, 138, 0.28) 45%, rgba(23, 52, 138, 0.28) 70%, rgba(15, 35, 96, 0.55) 100%);
+  --hero-text-shadow: rgba(5, 15, 45, 0.55);
+  --soft-tint-start: #eef4fd;
+  --soft-tint-end: #dbe7fb;
+  --nav-hover-color: #7fb2ff;
+  --nav-dropdown-hover-color: #1e6fd9;
+  --table-header-bg: #0f2360;
+  --table-day-bg: #dbe7fb;
+  --table-title-color: #17348a;
+  --table-highlight-bg: #eef4fd;
+  --light-section-bg: #f2f5fb;
+
+  /* Bright tech blue */
+  --hl-color: #7fb2ff;
+  --hl-line-color: #1e6fd9;
+  --hl-rgb: 30, 111, 217;
+  --hl-btn-bg: #1e6fd9;
+  --hl-btn-hover-bg: #17348a;
+  --hl-btn-border: #1e6fd9;
+  --hl-btn-text: #ffffff;
+  --hl-cell-bg: #e8f0fc;
+}
+
+/*--------------------------------------------------------------
+# Shared theme rules (apply to every theme)
+--------------------------------------------------------------*/
+:root[data-theme] .light-background {
+  --background-color: var(--light-section-bg);
   --surface-color: #ffffff;
 }
 
-/* Gold highlights inside dark sections (hero, footer) */
-:root[data-theme="a"] .dark-background {
-  --accent-color: var(--gold-color);
+/* Highlights inside dark sections (hero, footer) */
+:root[data-theme] .dark-background {
+  --accent-color: var(--hl-color);
 }
 
-/* Gold underline under section titles */
-:root[data-theme="a"] .tos-header h2:not(.theme-title)::after {
+/* Short highlight line under section titles */
+:root[data-theme] .tos-header h2:not(.theme-title)::after {
   content: "";
   display: block;
   width: 56px;
   height: 4px;
   margin: 12px auto 0;
   border-radius: 2px;
-  background: var(--gold-line-color);
+  background: var(--hl-line-color);
 }
 
-/* Header: gold line once scrolled */
-:root[data-theme="a"] .scrolled .header {
-  box-shadow: inset 0 -3px 0 var(--gold-color), 0 0 18px rgba(0, 0, 0, 0.1);
+/* Header: highlight line once scrolled */
+:root[data-theme] .scrolled .header {
+  box-shadow: inset 0 -3px 0 var(--hl-color), 0 0 18px rgba(0, 0, 0, 0.1);
 }
 
-/* Nav: gold underline under the active/hovered item */
-:root[data-theme="a"] .navmenu>ul>li>a:before {
+/* Nav: highlight underline under the active/hovered item */
+:root[data-theme] .navmenu>ul>li>a:before {
   background-color: var(--nav-hover-color);
 }
 
 /* Hero: soft shadow keeps white text readable on the lighter overlay */
-:root[data-theme="a"] .hero h2,
-:root[data-theme="a"] .hero p,
-:root[data-theme="a"] .hero .container div {
-  text-shadow: 0 2px 12px rgba(30, 0, 50, 0.55);
+:root[data-theme] .hero h2,
+:root[data-theme] .hero p,
+:root[data-theme] .hero .container div {
+  text-shadow: 0 2px 12px var(--hero-text-shadow);
 }
 
-/* Hero: gold dates */
-:root[data-theme="a"] .hero .hero-date {
-  color: var(--gold-color);
+/* Hero: highlighted dates */
+:root[data-theme] .hero .hero-date {
+  color: var(--hl-color);
   font-weight: 600;
 }
 
-/* Gold buttons with purple text */
-:root[data-theme="a"] .btn-accent:not(.disabled),
-:root[data-theme="a"] .information .tos-contact .contact-box .contact-content .contact-link {
-  background-color: var(--gold-color);
-  border-color: var(--gold-line-color);
-  color: #3a005e;
+/* Primary buttons */
+:root[data-theme] .btn-accent:not(.disabled),
+:root[data-theme] .information .tos-contact .contact-box .contact-content .contact-link {
+  background-color: var(--hl-btn-bg);
+  border-color: var(--hl-btn-border);
+  color: var(--hl-btn-text);
 }
 
-:root[data-theme="a"] .btn-accent:not(.disabled):hover,
-:root[data-theme="a"] .btn-accent:not(.disabled):focus,
-:root[data-theme="a"] .btn-accent.cfp-submit-btn:hover,
-:root[data-theme="a"] .btn-accent.cfp-submit-btn:focus-visible,
-:root[data-theme="a"] .information .tos-contact .contact-box .contact-content .contact-link:hover {
-  background-color: var(--gold-hover-color);
-  border-color: var(--gold-line-color);
-  color: #3a005e;
+:root[data-theme] .btn-accent:not(.disabled):hover,
+:root[data-theme] .btn-accent:not(.disabled):focus,
+:root[data-theme] .btn-accent.cfp-submit-btn:hover,
+:root[data-theme] .btn-accent.cfp-submit-btn:focus-visible,
+:root[data-theme] .information .tos-contact .contact-box .contact-content .contact-link:hover {
+  background-color: var(--hl-btn-hover-bg);
+  border-color: var(--hl-btn-border);
+  color: var(--hl-btn-text);
 }
 
-/* Purple tiles with gold icons */
-:root[data-theme="a"] .information .tos-contact .contact-box .contact-icon i,
-:root[data-theme="a"] .scroll-top i {
-  color: var(--gold-color);
+/* Accent tiles with highlighted icons */
+:root[data-theme] .information .tos-contact .contact-box .contact-icon {
+  background-color: var(--heading-color);
 }
 
-/* Call for Papers card and parking box: gold edge */
-:root[data-theme="a"] .submission-banner {
-  border-top: 4px solid var(--gold-line-color);
+:root[data-theme] .information .tos-contact .contact-box .contact-icon i,
+:root[data-theme] .scroll-top i {
+  color: var(--hl-color);
 }
 
-:root[data-theme="a"] .parking-info {
-  border-left-color: var(--gold-line-color);
+:root[data-theme] .scroll-top {
+  background-color: var(--heading-color);
 }
 
-/* Important Dates timeline: purple-to-gold line, gold dot on hover */
-:root[data-theme="a"] .timeline-background {
-  background: linear-gradient(90deg, rgba(86, 0, 141, 0.45), rgba(242, 212, 58, 0.9));
+/* Call for Papers card and parking box: highlight edge */
+:root[data-theme] .submission-banner {
+  border-top: 4px solid var(--hl-line-color);
 }
 
-:root[data-theme="a"] .timeline-item-elegant:hover .timeline-dot {
-  background: var(--gold-color);
-  box-shadow: 0 0 16px rgba(242, 212, 58, 0.8);
+:root[data-theme] .parking-info {
+  border-left-color: var(--hl-line-color);
 }
 
-/* Program & registration tables: gold column-header text, gold active period */
-:root[data-theme="a"] .program-schedule .col-header td,
-:root[data-theme="a"] .program-schedule .col-header th {
-  color: var(--gold-color);
+/* Important Dates timeline: accent-to-highlight line, glowing dot on hover */
+:root[data-theme] .timeline-background {
+  background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.45), rgba(var(--hl-rgb), 0.9));
 }
 
-:root[data-theme="a"] .reg-fee-table th.reg-active-period {
-  background-color: var(--gold-color);
-  color: #3a005e;
+:root[data-theme] .timeline-item-elegant:hover .timeline-dot {
+  background: var(--hl-color);
+  box-shadow: 0 0 16px rgba(var(--hl-rgb), 0.8);
 }
 
-:root[data-theme="a"] .reg-fee-table .reg-active-period {
-  background-color: #fff8d1;
+/* Program & registration tables: highlighted column-header text and active period */
+:root[data-theme] .program-schedule .col-header td,
+:root[data-theme] .program-schedule .col-header th {
+  color: var(--hl-color);
 }
 
-/* Footer: gold site name and top edge */
-:root[data-theme="a"] .footer {
-  border-top: 4px solid var(--gold-color);
+:root[data-theme] .reg-fee-table th.reg-active-period {
+  background-color: var(--hl-btn-bg);
+  color: var(--hl-btn-text);
 }
 
-:root[data-theme="a"] .footer .sitename {
-  color: var(--gold-color);
+:root[data-theme] .reg-fee-table .reg-active-period {
+  background-color: var(--hl-cell-bg);
+}
+
+/* Footer: highlighted site name and top edge */
+:root[data-theme] .footer {
+  border-top: 4px solid var(--hl-color);
+}
+
+:root[data-theme] .footer .sitename {
+  color: var(--hl-color);
 }
