@@ -87,6 +87,43 @@
 }
 
 /*--------------------------------------------------------------
+# Theme C - IM Department Website Teal
+--------------------------------------------------------------*/
+:root[data-theme="c"] {
+  --heading-color: #3b7d78;
+  --accent-color: #3b7d78;
+  --accent-rgb: 59, 125, 120;
+  --accent-hover-color: #2f6662;
+  --accent-strong-color: #2f6662;
+  --accent-dark-rgb: 90, 166, 160;
+  --surface-color: #eef7f6;
+  --dark-section-bg: #24524e;
+  --dark-section-surface: #3b7d78;
+  --header-scrolled-bg: #1d4441;
+  --hero-overlay: linear-gradient(180deg, rgba(29, 68, 65, 0.65) 0%, rgba(59, 125, 120, 0.22) 45%, rgba(59, 125, 120, 0.22) 70%, rgba(29, 68, 65, 0.45) 100%);
+  --hero-text-shadow: rgba(10, 35, 33, 0.55);
+  --soft-tint-start: #eaf6f6;
+  --soft-tint-end: #d3ecec;
+  --nav-hover-color: #b1dddd;
+  --nav-dropdown-hover-color: #3b7d78;
+  --table-header-bg: #24524e;
+  --table-day-bg: #d3ecec;
+  --table-title-color: #2f6662;
+  --table-highlight-bg: #eaf6f6;
+  --light-section-bg: #eff7f7;
+
+  /* Light teal: on dark backgrounds only (fails contrast on white) */
+  --hl-color: #b1dddd;
+  --hl-line-color: #5aa6a0;
+  --hl-rgb: 90, 166, 160;
+  --hl-btn-bg: #3b7d78;
+  --hl-btn-hover-bg: #2f6662;
+  --hl-btn-border: #3b7d78;
+  --hl-btn-text: #ffffff;
+  --hl-cell-bg: #e3f3f3;
+}
+
+/*--------------------------------------------------------------
 # Shared theme rules (apply to every theme)
 --------------------------------------------------------------*/
 :root[data-theme] .light-background {
