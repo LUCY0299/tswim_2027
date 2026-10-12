@@ -15,6 +15,9 @@
 # Theme A - NCU Purple & Gold
 --------------------------------------------------------------*/
 :root[data-theme="a"] {
+  --logo-mark: url("../img/logo-a-header.png?v=3");
+  --logo-size: contain;
+  --logo-ratio: 1.157;
   --heading-color: #56008d;
   --accent-color: #56008d;
   --accent-rgb: 86, 0, 141;
@@ -52,6 +55,9 @@
 # Theme B - IM Department Flag Navy
 --------------------------------------------------------------*/
 :root[data-theme="b"] {
+  --logo-mark: url("../img/logo-b-header.png?v=3");
+  --logo-size: contain;
+  --logo-ratio: 1.16;
   --default-color: #000000;
   --heading-color: #17348a;
   --accent-color: #1e6fd9;
@@ -90,6 +96,9 @@
 # Theme C - IM Department Website Teal
 --------------------------------------------------------------*/
 :root[data-theme="c"] {
+  --logo-mark: url("../img/logo-c-header.png?v=3");
+  --logo-size: contain;
+  --logo-ratio: 1.123;
   --heading-color: #3b7d78;
   --accent-color: #3b7d78;
   --accent-rgb: 59, 125, 120;
@@ -129,6 +138,29 @@
 :root[data-theme] .light-background {
   --background-color: var(--light-section-bg);
   --surface-color: #ffffff;
+}
+
+/* Header: full theme logo (symbol + text) replaces the default badge and site name */
+.header .logo .logo-mark {
+  display: none;
+}
+
+:root[data-theme] .header .logo .logo-badge,
+:root[data-theme] .header .logo .logo-text {
+  display: none;
+}
+
+:root[data-theme] .header .logo .logo-mark {
+  display: block;
+  height: 120px;
+  aspect-ratio: var(--logo-ratio);
+  flex-shrink: 0;
+  background: var(--logo-mark) center / var(--logo-size) no-repeat;
+  transition: height 0.3s ease;
+}
+
+:root[data-theme] .scrolled .header .logo .logo-mark {
+  height: 64px;
 }
 
 /* Highlights inside dark sections (hero, footer) */
