@@ -288,6 +288,11 @@
   color: var(--hl-color);
 }
 
+/* Preview without the hero overlay: ?overlay=none (placed after the theme blocks so it wins) */
+:root[data-overlay="none"] {
+  --hero-overlay: none;
+}
+
 /*--------------------------------------------------------------
 # Theme Preview Switcher (assets/js/theme-switcher.js)
 # Neutral styling so it looks the same under every theme.

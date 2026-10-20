@@ -34,11 +34,13 @@
   <link href="assets/css/schedule.css?v=1.0.30" rel="stylesheet">
 
   <!-- Color theme previews (?theme=a|b|c) -->
-  <link href="assets/css/themes.css?v=1.0.20" rel="stylesheet">
+  <link href="assets/css/themes.css?v=1.0.21" rel="stylesheet">
   <script>
     (function () {
-      var theme = new URLSearchParams(location.search).get('theme');
+      var params = new URLSearchParams(location.search);
+      var theme = params.get('theme');
       if (/^[abc]$/.test(theme)) document.documentElement.setAttribute('data-theme', theme);
+      if (params.get('overlay') === 'none') document.documentElement.setAttribute('data-overlay', 'none');
     })();
   </script>
 
