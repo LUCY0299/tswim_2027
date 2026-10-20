@@ -33,14 +33,21 @@
   <!-- Schedule CSS (scoped under .program-schedule) -->
   <link href="assets/css/schedule.css?v=1.0.30" rel="stylesheet">
 
-  <!-- Color theme previews (?theme=a|b|c) -->
+  <!-- Color themes: default is theme A without the hero overlay.
+       Previews: ?theme=a|b|c, ?theme=original (the original green/blue design), &overlay=none -->
   <link href="assets/css/themes.css?v=1.0.24" rel="stylesheet">
   <script>
     (function () {
+      var root = document.documentElement;
       var params = new URLSearchParams(location.search);
       var theme = params.get('theme');
-      if (/^[abc]$/.test(theme)) document.documentElement.setAttribute('data-theme', theme);
-      if (params.get('overlay') === 'none') document.documentElement.setAttribute('data-overlay', 'none');
+      if (theme === null) {
+        root.setAttribute('data-theme', 'a');
+        root.setAttribute('data-overlay', 'none');
+        return;
+      }
+      if (/^[abc]$/.test(theme)) root.setAttribute('data-theme', theme);
+      if (params.get('overlay') === 'none') root.setAttribute('data-overlay', 'none');
     })();
   </script>
 
@@ -1599,7 +1606,7 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js?v=1.0.6"></script>
   <script src="assets/js/ev.min.js?v=1.0.2"></script>
-  <script src="assets/js/theme-switcher.js?v=1.0.1"></script>
+  <script src="assets/js/theme-switcher.js?v=1.0.2"></script>
 
   <!-- Collapse/expand past pre-TSWIM events -->
   <script>
