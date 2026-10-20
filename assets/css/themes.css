@@ -300,10 +300,10 @@
   }
 }
 
-/* No-overlay preview, theme A: light purple box behind the hovered nav item (desktop) */
+/* No-overlay preview, theme A: dark purple box behind the hovered nav item (desktop) */
 @media (min-width: 1200px) {
   :root[data-theme="a"][data-overlay="none"] .navmenu>ul>li:hover {
-    background-color: rgba(196, 160, 230, 0.55);
+    background-color: rgba(86, 0, 141, 0.45);
   }
 }
 
