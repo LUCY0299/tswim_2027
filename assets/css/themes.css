@@ -219,3 +219,27 @@
     background-color: rgba(86, 0, 141, 0.45);
   }
 }
+
+/* "Coming Soon" notes: plain gray italic text instead of the template's boxed placeholder */
+:root[data-theme] .tbd-placeholder {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin-top: 0.5rem;
+}
+
+:root[data-theme] .tbd-placeholder i {
+  display: none;
+}
+
+:root[data-theme] .tbd-placeholder span {
+  font-size: 1.15rem;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  color: #6b6b80;
+}
+
+/* Inline variant inside a list (Key Staff): match the list text size */
+:root[data-theme] .tbd-placeholder.tbd-inline span {
+  font-size: 1rem;
+}
