@@ -1,20 +1,19 @@
 /*--------------------------------------------------------------
-# Color Theme Previews
-# Activated by <html data-theme="a|b|c"> (set from the ?theme= URL parameter).
-# Without data-theme, the default colors in main.css apply.
+# TSWIM 2027 Color Theme (NCU Purple & Gold)
+# Applied through <html data-theme="tswim2027"> in index.html.
+# Overrides the template colors in main.css.
 #
-# Each theme sets the base color variables plus a highlight set (--hl-*):
+# Besides the base color variables, the theme sets a highlight set (--hl-*):
 #   --hl-color         highlight on dark backgrounds (nav, hero date, footer)
 #   --hl-line-color    highlight lines on light backgrounds
 #   --hl-rgb           highlight as an RGB triplet, for glows
 #   --hl-btn-*         primary button colors
 #   --hl-cell-bg       active registration period cells
+#
+# The earlier A/B/C color previews are kept in the git tag "theme-previews-abc".
 --------------------------------------------------------------*/
 
-/*--------------------------------------------------------------
-# Theme A - NCU Purple & Gold
---------------------------------------------------------------*/
-:root[data-theme="a"] {
+:root[data-theme] {
   --logo-mark: url("../img/logo-a-header.png?v=3");
   --logo-size: contain;
   --logo-ratio: 1.157;
@@ -28,7 +27,7 @@
   --dark-section-bg: #3a005e;
   --dark-section-surface: #56008d;
   --header-scrolled-bg: #2e004b;
-  --hero-overlay: linear-gradient(180deg, rgba(46, 0, 75, 0.6) 0%, rgba(46, 0, 75, 0) 30%);
+  --hero-overlay: none;
   --hero-text-shadow: rgba(30, 0, 50, 0.55);
   --soft-tint-start: #f3e8fb;
   --soft-tint-end: #e6d3f5;
@@ -52,88 +51,7 @@
 }
 
 /*--------------------------------------------------------------
-# Theme B - IM Department Flag Navy
---------------------------------------------------------------*/
-:root[data-theme="b"] {
-  --logo-mark: url("../img/logo-b-header.png?v=3");
-  --logo-size: contain;
-  --logo-ratio: 1.16;
-  --default-color: #000000;
-  --heading-color: #17348a;
-  --accent-color: #1e6fd9;
-  --accent-rgb: 30, 111, 217;
-  --accent-hover-color: #17348a;
-  --accent-strong-color: #17348a;
-  --accent-dark-rgb: 30, 111, 217;
-  --surface-color: #eef2fa;
-  --dark-section-bg: #0f2360;
-  --dark-section-surface: #17348a;
-  --header-scrolled-bg: #0c1c4d;
-  --hero-overlay: linear-gradient(180deg, rgba(15, 35, 96, 0.75) 0%, rgba(23, 52, 138, 0.28) 45%, rgba(23, 52, 138, 0.28) 70%, rgba(15, 35, 96, 0.55) 100%);
-  --hero-text-shadow: rgba(5, 15, 45, 0.55);
-  --soft-tint-start: #eef4fd;
-  --soft-tint-end: #dbe7fb;
-  --nav-hover-color: #7fb2ff;
-  --nav-dropdown-hover-color: #1e6fd9;
-  --table-header-bg: #0f2360;
-  --table-day-bg: #dbe7fb;
-  --table-title-color: #17348a;
-  --table-highlight-bg: #eef4fd;
-  --light-section-bg: #f2f5fb;
-
-  /* Bright tech blue */
-  --hl-color: #7fb2ff;
-  --hl-line-color: #1e6fd9;
-  --hl-rgb: 30, 111, 217;
-  --hl-btn-bg: #1e6fd9;
-  --hl-btn-hover-bg: #17348a;
-  --hl-btn-border: #1e6fd9;
-  --hl-btn-text: #ffffff;
-  --hl-cell-bg: #e8f0fc;
-}
-
-/*--------------------------------------------------------------
-# Theme C - IM Department Website Teal
---------------------------------------------------------------*/
-:root[data-theme="c"] {
-  --logo-mark: url("../img/logo-c-header.png?v=3");
-  --logo-size: contain;
-  --logo-ratio: 1.123;
-  --heading-color: #3b7d78;
-  --accent-color: #3b7d78;
-  --accent-rgb: 59, 125, 120;
-  --accent-hover-color: #2f6662;
-  --accent-strong-color: #2f6662;
-  --accent-dark-rgb: 90, 166, 160;
-  --surface-color: #eef7f6;
-  --dark-section-bg: #24524e;
-  --dark-section-surface: #3b7d78;
-  --header-scrolled-bg: #1d4441;
-  --hero-overlay: linear-gradient(180deg, rgba(29, 68, 65, 0.65) 0%, rgba(59, 125, 120, 0.22) 45%, rgba(59, 125, 120, 0.22) 70%, rgba(29, 68, 65, 0.45) 100%);
-  --hero-text-shadow: rgba(10, 35, 33, 0.55);
-  --soft-tint-start: #eaf6f6;
-  --soft-tint-end: #d3ecec;
-  --nav-hover-color: #b1dddd;
-  --nav-dropdown-hover-color: #3b7d78;
-  --table-header-bg: #24524e;
-  --table-day-bg: #d3ecec;
-  --table-title-color: #2f6662;
-  --table-highlight-bg: #eaf6f6;
-  --light-section-bg: #eff7f7;
-
-  /* Light teal: on dark backgrounds only (fails contrast on white) */
-  --hl-color: #b1dddd;
-  --hl-line-color: #5aa6a0;
-  --hl-rgb: 90, 166, 160;
-  --hl-btn-bg: #3b7d78;
-  --hl-btn-hover-bg: #2f6662;
-  --hl-btn-border: #3b7d78;
-  --hl-btn-text: #ffffff;
-  --hl-cell-bg: #e3f3f3;
-}
-
-/*--------------------------------------------------------------
-# Shared theme rules (apply to every theme)
+# Theme rules
 --------------------------------------------------------------*/
 :root[data-theme] .light-background {
   --background-color: var(--light-section-bg);
@@ -288,11 +206,6 @@
   color: var(--hl-color);
 }
 
-/* Preview without the hero overlay: ?overlay=none (placed after the theme blocks so it wins) */
-:root[data-overlay="none"] {
-  --hero-overlay: none;
-}
-
 /* Nav: keep the right padding on the last item so its hover box is symmetric (desktop) */
 @media (min-width: 1200px) {
   :root[data-theme] .navmenu>ul>li:last-child {
@@ -300,98 +213,9 @@
   }
 }
 
-/* No-overlay preview, theme A: dark purple box behind the hovered nav item (desktop) */
+/* Nav: dark purple box behind the hovered item (desktop) */
 @media (min-width: 1200px) {
-  :root[data-theme="a"][data-overlay="none"] .navmenu>ul>li:hover {
+  :root[data-theme] .navmenu>ul>li:hover {
     background-color: rgba(86, 0, 141, 0.45);
-  }
-}
-
-/*--------------------------------------------------------------
-# Theme Preview Switcher (assets/js/theme-switcher.js)
-# Neutral styling so it looks the same under every theme.
---------------------------------------------------------------*/
-.theme-switcher {
-  position: fixed;
-  left: 16px;
-  bottom: 16px;
-  z-index: 996; /* above page content, below the header (997, which holds the mobile menu) and modals */
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 6px;
-  background: #ffffff;
-  border: 1px solid #e2e4e8;
-  border-radius: 999px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
-  font-family: var(--default-font);
-  white-space: nowrap;
-}
-
-.theme-switcher-title {
-  padding: 0 8px 0 10px;
-  font-size: 13px;
-  font-weight: 600;
-  color: #555;
-}
-
-.theme-switcher-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border: 2px solid transparent;
-  border-radius: 999px;
-  background: transparent;
-  color: #333;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.2;
-  cursor: pointer;
-  transition: background-color 0.2s, border-color 0.2s;
-}
-
-.theme-switcher-btn:hover {
-  background: #f2f3f5;
-}
-
-.theme-switcher-btn[aria-pressed="true"] {
-  border-color: var(--swatch-main);
-  background: #ffffff;
-  font-weight: 700;
-}
-
-.theme-switcher-btn:focus-visible {
-  outline: 2px solid #333;
-  outline-offset: 2px;
-}
-
-/* Two-tone dot: theme main color + accent color */
-.theme-switcher-swatch {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--swatch-main) 50%, var(--swatch-accent) 50%);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
-  flex-shrink: 0;
-}
-
-.theme-switcher-id {
-  font-weight: 700;
-}
-
-/* Phones & small tablets: hide the title and long labels, keep swatch + letter */
-@media (max-width: 768px) {
-  .theme-switcher {
-    bottom: 12px;
-  }
-
-  .theme-switcher-title,
-  .theme-switcher-label {
-    display: none;
-  }
-
-  .theme-switcher-btn {
-    padding: 6px 10px;
   }
 }

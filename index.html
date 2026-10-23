@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="tswim2027">
 
 <head>
   <meta charset="utf-8">
@@ -33,23 +33,8 @@
   <!-- Schedule CSS (scoped under .program-schedule) -->
   <link href="assets/css/schedule.css?v=1.0.30" rel="stylesheet">
 
-  <!-- Color themes: default is theme A without the hero overlay.
-       Previews: ?theme=a|b|c, ?theme=original (the original green/blue design), &overlay=none -->
-  <link href="assets/css/themes.css?v=1.0.24" rel="stylesheet">
-  <script>
-    (function () {
-      var root = document.documentElement;
-      var params = new URLSearchParams(location.search);
-      var theme = params.get('theme');
-      if (theme === null) {
-        root.setAttribute('data-theme', 'a');
-        root.setAttribute('data-overlay', 'none');
-        return;
-      }
-      if (/^[abc]$/.test(theme)) root.setAttribute('data-theme', theme);
-      if (params.get('overlay') === 'none') root.setAttribute('data-overlay', 'none');
-    })();
-  </script>
+  <!-- TSWIM 2027 color theme -->
+  <link href="assets/css/themes.css?v=1.1.0" rel="stylesheet">
 
 </head>
 
@@ -1607,7 +1592,6 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js?v=1.0.6"></script>
   <script src="assets/js/ev.min.js?v=1.0.2"></script>
-  <script src="assets/js/theme-switcher.js?v=1.0.2"></script>
 
   <!-- Collapse/expand past pre-TSWIM events -->
   <script>
