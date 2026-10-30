@@ -3613,6 +3613,11 @@ section,
   margin-top: 1rem;
 }
 
+/* A lone hotel card spans the full row */
+.hotel-cards-container > .hotel-card:only-child {
+  grid-column: 1 / -1;
+}
+
 @media (max-width: 992px) {
   .hotel-cards-container {
     grid-template-columns: 1fr;
